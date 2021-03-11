@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RTC con Websockets signaling test</title>
+        <link rel="stylesheet" href="b5.css">
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    </head>
+    <body>
+        <div class="container" id="main-control-users">
+            <div class="form-floating">
+                <input type="text" class="form-control" id="user" name="name" placeholder="username">
+                <label class="form-label" for="user">Nickname </label>
+            </div>
+            
+            <div class="form-text">¡Puede ser repetido! pero no en blanco</div>
+                <button class="btn btn-primary" id="conectar">Conectar</button>
+                <button class="btn btn-outline-primary" id="desconectar" disabled>Desconectar</button>    
+                <div class="btn-group" role="group" id="estados">
+                    <button type="button" class="btn btn-success" disabled>Online</button>
+                    <button type="button" class="btn btn-warning" disabled>Idle</button>
+                    <button type="button" class="btn btn-danger" disabled>DND</button>
+                </div>        
+        </div>
+        <hr>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <p>Usuarios online</p>
+                    <ul class="list-group" id="user-list">
+                    </ul>
+                </div>
+                <div class="col-md-5">
+                    <div class="video-container">
+                        <p>Video Local</p>
+                        <video class="embed-responsive-item w-75 h-75" id="local" autoplay muted></video>
+                        <p>Tú</p>
+                    </div>
+                    <div class="video-container">
+                        <p>Video Remoto</p>
+                        <video class="embed-responsive-item w-75 h-75" id="remoto" autoplay></video>
+                        <p>Otro user</p>
+                    </div>
+                </div>
+            </div>
+
+        </div> 
+
+        
+        <script src="client.js"></script>
+    </body>
+</html>
